@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>lib/snns.rb</string>
+	<string>lib/svm.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -151,20 +151,6 @@
 			<key>firstVisibleLine</key>
 			<integer>95</integer>
 		</dict>
-		<key>lib/snns.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>73</integer>
-				<key>line</key>
-				<integer>90</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>71</integer>
-		</dict>
 		<key>lib/study.rb</key>
 		<dict>
 			<key>caret</key>
@@ -184,21 +170,20 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>7</integer>
+				<integer>56</integer>
 				<key>line</key>
-				<integer>84</integer>
+				<integer>108</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>114</integer>
+			<integer>55</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>bin/svm_comb.rb</string>
 		<string>lib/svm.rb</string>
-		<string>lib/snns.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
