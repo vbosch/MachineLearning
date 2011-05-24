@@ -106,7 +106,7 @@ module MachineLearning
     
     def result(pattern_file)
       res = Hash.new
-      Open3.popen3("#{@toolspath}#{classify_comand} -v 1 #{pattern_file} #{@parameter[:out_model]}" ) do |stdin,stdout,stderr|
+      Open3.popen3("#{@toolspath}#{classify_comand} -v 0 #{pattern_file} #{@parameter[:out_model]}" ) do |stdin,stdout,stderr|
         while line = stdout.gets
           puts line
           array=line.chomp.split
