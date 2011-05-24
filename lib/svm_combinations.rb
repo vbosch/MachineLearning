@@ -9,7 +9,6 @@ module MachineLearning
   class SvmCombinations
     def initialize(extoolspath="",type=:one_against_all)
       @num_classes=nil
-      puts "HELLO"
     end
     def set_directory(exdirectory)
       @directory=exdirectory
@@ -65,7 +64,7 @@ module MachineLearning
           aux_param = @parameter.clone
           aux_param[:out_model] = aux_param[:out_model] + "/#{curr_class}_#{vs_class}.net"
           aux_param[:train_pat] = aux_param[:train_pat]["#{curr_class}-#{vs_class}"]
-          puts "Training #{curr_class}-#{vs_class}"
+          #puts "Training #{curr_class}-#{vs_class}"
           @svms[curr_class][vs_class].launch_experiment(aux_param)
         end
       end  

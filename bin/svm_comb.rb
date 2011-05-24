@@ -7,7 +7,7 @@ require_relative '../lib/study'
 require_relative '../lib/blank_formatters'
 
 data_folder="../test/theory_data/"
-results_folder="./SVM_TEST"
+results_folder="./svm_combinations_polynomial"
 
 
 set = MachineLearning::DataSet.new(data_folder+"sat6c.tra",36,:float)
@@ -33,7 +33,7 @@ study_params << algo_param
 
 d_polynomial_factor = MachineLearning::Parameter.new(:d_polynomial_factor)
 
-d_polynomial_factor.numeric_range(1,1,1)
+d_polynomial_factor.numeric_range(1,3,1)
 
 study_params << d_polynomial_factor
 

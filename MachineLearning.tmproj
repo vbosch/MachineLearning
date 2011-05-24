@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>lib/svm_combinations.rb</string>
+	<string>lib/snns.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -100,14 +100,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>85</integer>
+				<integer>37</integer>
 				<key>line</key>
-				<integer>41</integer>
+				<integer>35</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>8</integer>
+			<integer>3</integer>
 		</dict>
 		<key>lib/data_pattern.rb</key>
 		<dict>
@@ -151,6 +151,20 @@
 			<key>firstVisibleLine</key>
 			<integer>95</integer>
 		</dict>
+		<key>lib/snns.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>73</integer>
+				<key>line</key>
+				<integer>90</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>71</integer>
+		</dict>
 		<key>lib/study.rb</key>
 		<dict>
 			<key>caret</key>
@@ -177,33 +191,14 @@
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>74</integer>
-		</dict>
-		<key>lib/svm_combinations.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>21</integer>
-				<key>line</key>
-				<integer>105</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>75</integer>
+			<integer>114</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>bin/svm_comb.rb</string>
 		<string>lib/svm.rb</string>
-		<string>lib/svm_combinations.rb</string>
-		<string>bin/set_data.rb</string>
-		<string>lib/study.rb</string>
-		<string>lib/experiment.rb</string>
-		<string>lib/data_set.rb</string>
-		<string>lib/data_pattern.rb</string>
+		<string>lib/snns.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
