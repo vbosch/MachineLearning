@@ -1,0 +1,87 @@
+This data was kindly provided by Jens Gregor.  Here below is
+his message which describes the databse is and gives conditions
+for its use.  If you have questions, please ask first to
+Enrique Vidal (evidal@iti.upv.es).
+
+---------------------------------------------------------------------
+From jgregor@cs.utk.edu Wed Oct  2 15:07 MET 1996
+Subject: chromosome db intro
+Cc: eg@vision.auc.dk
+Status: RO
+X-Status: 
+
+Dear colleagues,
+
+You said you wanted a copy of our chromosome database. Actually,
+it consists of raw profile data plus a multi-option program for 
+extracting and encoding string sequences. To ensure compatibility, 
+I forward you a copy of the string encodings that we use rather 
+than the raw data itself.  For details you will have to see some 
+of the references given below. 
+
+We do ask that you make reference to the following paper if, or when, 
+publishing results based on this data:
+
+@article(Lundsteen-al80,
+    author = "C Lundsteen and J Phillip and E Granum",
+    title = "Quantitative analysis of 6985 digitized trypsin 
+	    {G}-banded human metaphase chromosomes",
+    journal = "Clinical Genetics",
+    volume = 18,
+    pages = "355-370",
+    year = 1980
+)
+
+In addition to this reference to the Copenhagen database, as it
+has become known, you should include one of the following papers
+(or both) as a reference to the profile processing:
+
+@incollection(Granum-al89,
+    author = "E Granum and M G Thomason and J Gregor",
+    title = "On the use of automatically inferred {M}arkov networks 
+	    for chromosome analysis",
+    pages = "233--251"
+    editor = "C Lundsteen and J Piper",
+    booktitle = "Automation of Cytogenetics",
+    publisher = "Springer-Verlag",
+    address = "Berlin",
+    year = 1989
+)
+
+@article(GraTho90,
+    author = "E Granum and M G Thomason",
+    title = "Automatically inferred {M}arkov network models for
+	   classification of chromosomal band pattern structures",
+    journal = "Cytometry",
+    volume = 11, 
+    pages = "26--39", 
+    year = 1990
+)
+
+If you have any questions, I'll be happy to try and provide an 
+answer. But if the question pertains to the raw data or details of
+the profile processing, then I suggest that you contact Erik Granum 
+(my Ph.D. advisor). He can be reached as eg@vision.auc.dk. He may
+also be able to help you if you want to find out about the much 
+larger database that I mentioned (which may or may not exist).
+
+The database consists of 44 files, e.g., dif22da,
+that each have 100 lines of the form
+
+/ 5467 119 22 27 9 /    AA==a==E===d==A==a=Aa=A=a=b
+
+where 5467 is a unique chromosome identifier, 119 refers to the 
+metaphase the sample came from (1..180), 22 is the chromosome type, 
+27 is the overall string length, and 9 is the length of the p-arm,
+i.e., the centromere position. The slashes are, of course, only
+delimiters and should be ignored, i.e., the alphabet consists of
+the letters a-f, A-F, and = (it may a-e and A-E, I forget).
+
+I will be looking forward to hearing back from you once you have
+had a chance to apply your methods to the data. As a matter of
+fact, I'll be happy find our classification or centromere finding 
+results so that we can make a detailed performance comparison.
+The papers (cf. the ICGI paper for refs.) only report averages.
+
+Sincerely,
+Jens Gregor

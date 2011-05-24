@@ -1,0 +1,9 @@
+\contentsline {xsect}{Introduction}{1}
+\contentsline {xsect}{Development}{2}
+\contentsline {xsect}{Experimental Results}{5}
+\contentsline {figure}{\numberline {1}{\ignorespaces Terrain classification task: Correlation of the learning factor over the topology}}{6}
+\contentsline {figure}{\numberline {2}{\ignorespaces Terrain classification task: Average correctly classified patterns per Topology}}{7}
+\contentsline {figure}{\numberline {3}{\ignorespaces Terrain classification task: Correlation of the momentum factor over the topology}}{8}
+\contentsline {figure}{\numberline {4}{\ignorespaces Terrain classification task: Topology study for radial networks - Validation MSE}}{9}
+\contentsline {figure}{\numberline {5}{\ignorespaces Terrain classification task: Topology study for radial networks - correct classification}}{10}
+\contentsline {xsect}{Conclusions}{10}
