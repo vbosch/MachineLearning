@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9997.4 (TeX Live 2010/MacPorts 2010_4) (format=xelatex 2011.5.5)  25 MAY 2011 09:41
+This is XeTeX, Version 3.1415926-2.2-0.9997.4 (TeX Live 2010/MacPorts 2010_4) (format=xelatex 2011.5.5)  25 MAY 2011 10:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -484,12 +484,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--88
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 103.
-[1] [2] (/opt/local/share/texmf-texlive-dist/tex/latex/listings/lstlang1.sty
+[1] [2] [3]
+(/opt/local/share/texmf-texlive-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/opt/local/share/texmf-texlive-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2004/09/05 1.3 listings language file
-) [3]
+)
 (../bin/svm_comb.rb
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 27.
 
@@ -504,24 +505,7 @@ Overfull \hbox (106.91344pt too wide) in paragraph at lines 47--49
 ][][][][][][][][][][][][][] 
  []
 
-) [4]
-Overfull \hbox (82.03946pt too wide) in paragraph at lines 207--207
- []\OT1/cmtt/m/n/8 {:algo=>"Quickprop", :in_model=>"../test/theory_data/trr_36_
-20_6.net", :learning=>0.15000000000000002, :max_growth=>0.1,[] 
- []
-
-
-Overfull \hbox (26.78867pt too wide) in paragraph at lines 207--207
- []\OT1/cmtt/m/n/8 :id=>1, :test_pat=>"./QP30_20_6/20110209-000607_test.pat", :
-val_pat=>"./QP30_20_6/20110209-000607_val.pat",[] 
- []
-
-
-Overfull \hbox (31.03873pt too wide) in paragraph at lines 207--207
- []\OT1/cmtt/m/n/8 :train_pat=>"./QP30_20_6/20110209-000607_train.pat", :out_mo
-del=>"./QP30_20_6/20110209-000607Quickprop.net",[] 
- []
-
+[4]) [5]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the ARN_theo.maf file.
@@ -533,18 +517,19 @@ Package minitoc(hints) Info: I0053
 (minitoc(hints))             facilities can not be used for new types 
 (minitoc(hints))             of floats defined by the float package.
 
+
 Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the ARN_theo.log file.
 
-[5] (./ARN_theo.aux) ) 
+[6] (./ARN_theo.aux) ) 
 Here is how much of TeX's memory you used:
  4991 strings out of 495452
  64291 string characters out of 3180217
- 173938 words of memory out of 3000000
+ 171499 words of memory out of 3000000
  7909 multiletter control sequences out of 15000+200000
  9706 words of font info for 36 fonts, out of 3000000 for 9000
  134 hyphenation exceptions out of 8191
- 30i,8n,40p,514b,1386s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,8n,40p,514b,1711s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ARN_theo.pdf (6 pages).
+Output written on ARN_theo.pdf (7 pages).
