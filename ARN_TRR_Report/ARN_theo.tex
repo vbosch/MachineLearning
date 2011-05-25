@@ -144,6 +144,18 @@
 
 \par In this section we will describe the software framework developed in order to perform the experimentations for the task. The framework developed allows us to load, format and perform transformations with specific data sets and also launch classifier training with different classifiers and obtain mean test set classification error with cross validation. 
 
+For the development of the framework we have used:
+\begin{itemize}
+	\item SVM Light and SVM Multiclass developed by Thorsten Joachims.
+	\item Ruby scripting language 1.9.2
+	\item Ruby libraries:
+	\begin{itemize}
+		\item Awesome print: to print outputs in a more human readable manner.
+		\item Open 3: to allow us to connect to the input, output and error streams of an executed command
+		\item Date: to retrieve the current date and time in order to time stamp files. 
+	\end{itemize}
+\end{itemize}
+
 \subsection{Software Structure}
 
 \par The software is structured into the following classes:
@@ -165,13 +177,20 @@
 		\item Filter the set to a sub set of labels/classes.
 		\item Binarize labels so that they can be sent to 2-class limited classifiers. 
 	\end{itemize}
-	\item[Snns:] The Snns class can be found in the \textit{./lib/snns.rb} file. It is an object wrapper for the Batchman snns interface and allows us to perform the following tasks from the framework:
+	\item[Svm:] The Svm class can be found in the \textit{./lib/svm.rb} file. It is an object wrapper for the svm light and svm multiclass developed by Thorsten Joachims and allows us to perform the following tasks from the framework:
 	\begin{itemize}
-		\item The class allows as input an experiment object, it automatically generates an specific batchman script file and runs it. 
-		\item Permits us to programmatically access to the results of the .res files when reviewed with the analyze tool.
+		\item The class allows as input an experiment object, and performs a classification with the svm light or svm multiclass algorithms. 
+		\item Permits the evaluation of a test set and returns us the classification error obtained.
+		\item Permits the classification of a test pattern by saving it to a temporary file and returns us the estimated class.
 	\end{itemize}
-	\item[SnnsFileWriter:] The SnnsFileWriter class can be found in the \textit{./lib/snns.rb} file. The file writer is in charge of performing header and footer special formatting for the toolset chosen. In this case it allows us to call mkhead from the framework to prepare the pattern files. 
-	\item[SnnsPatternWriter:] It can be found in \textit{./lib/snns.rb}. The pattern writer in in charge of performing special formatting to the patterns required for correct usage on the desired toolset. In this case it ensures there is a space between each dimension value and ensures there is a line space between the vector and the class label. 
+	\item[SvmFileWriter:] The class can be found in the \textit{./lib/svm.rb} file. The file writer is in charge of performing header and footer special formatting for the SVM toolset. In this case it creates the pattern file and just adds a #EOF at the end of the file as the SVM commands used do not require any other file formatting.
+	\item[SvmPatternWriter:] Can be found in \textit{./lib/svm.rb}. The pattern writer in in charge of performing special formatting to the patterns required for correct usage on the desired toolset. In this case the label is printed at the beginning and each of the dimensions value is preceded by the relative position of the dimension inside the feature space as the selected SVM toolset enforces sparse vector representation.
+	\item[SvmCombinations] Coded in \textit{./lib/svm\_combinations.rb}. The class represents a multiclass classifier that is made up from the combination of two class classifiers in a directed acyclic graph (Plat, Cristianini & Shawe-Taylor 2000). The class allows us to:
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	
+	
 	\item[Parameter:] Coded in \textit{./lib/parameter.rb}. The class allows us to define a parameter and a range of values of variation. The values can be a set of strings, if for example we want to vary between different neural network files or a numeric value, to study an specific range of the momentum parameter. 
 	\item[Experiment:] Present in the file \textit{./lib/experiment.rb}. It is an specific configuration, value set, of the parameters that will be executed on the chosen ML tool set and the value will be averaged over cross experimentation. 
 	\item[Study:] contained in \textit{./lib/study.rb}. It generates the set of experiments by performing combinations of each of the values for each parameter described and runs them writing the results and studies performed in specific files. 
