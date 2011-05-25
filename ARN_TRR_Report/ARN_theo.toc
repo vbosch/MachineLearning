@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {subsection}{\numberline {1.1}Data}{1}
+\contentsline {subsection}{\numberline {1.2}Scope}{2}
+\contentsline {section}{\numberline {2}Development}{2}
+\contentsline {subsection}{\numberline {2.1}Software Structure}{3}
+\contentsline {subsection}{\numberline {2.2}Library Options}{4}
+\contentsline {subsection}{\numberline {2.3}Software Output}{4}
+\contentsline {section}{\numberline {3}Experimental Results}{5}
+\contentsline {subsection}{\numberline {3.1}Neural Networks}{5}
+\contentsline {section}{\numberline {4}Conclusions}{5}

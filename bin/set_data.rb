@@ -16,7 +16,7 @@ require_relative '../lib/chromosome_formatters'
 
 data_folder="../test/theory_data/"
 
-set = MachineLearning::DataSet.new(data_folder+"sat6c.public.tst.norm",36,:float)
+set = MachineLearning::DataSet.new(data_folder+"sat6c.public.tst",36,:float)
 
 #data.statistics
 
