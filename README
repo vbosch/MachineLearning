@@ -1,0 +1,10 @@
+This repository contains classes used in order to process data files and train
+discriminative classifiers (Neural Networks and Support Vector Machines) in an automated manner.
+
+For Neural Network training it uses the SNNS Software (http://www.ra.cs.uni-tuebingen.de/SNNS/).
+
+For Support Vector Machines it uses SVM Light and SVM Multiclass owned by Thorsten Joachims (http://svmlight.joachims.org/).
+
+Please see the bin directories for sample scripts used in order to train classifiers massively with the developed software.
+
+Also ARN_TRR_Report and RN_TRR_Report contain documentation (generated in Latex) regarding the usage of the software.
