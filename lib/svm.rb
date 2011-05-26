@@ -54,7 +54,7 @@ module MachineLearning
     
     def generate_call_params
       
-      line = " -t #{@parameter[:kernel_type]}"
+      line = "-c #{@parameter[:trade_off]} -t #{@parameter[:kernel_type]}"
       
       case @parameter[:kernel_type]
       when 1 then #polynomial kernel
@@ -101,7 +101,7 @@ module MachineLearning
     
     def svm_learn(parameter_line)
       #puts "#{@toolspath}#{learn_comand} -v 0 -m 1024 -c 0.01 #{parameter_line}"      
-      system "#{@toolspath}#{learn_comand} -v 0 -m 1024 -c 0.01 #{parameter_line}"      
+      system "#{@toolspath}#{learn_comand} -v 0 -m 1024 #{parameter_line}"      
     end
     
     def result(pattern_file)

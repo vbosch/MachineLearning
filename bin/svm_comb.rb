@@ -7,7 +7,7 @@ require_relative '../lib/study'
 require_relative '../lib/blank_formatters'
 
 data_folder="../test/theory_data/"
-results_folder="./svm_combinations_rbf_2"
+results_folder="./svm_combinations_rbf_3"
 
 
 set = MachineLearning::DataSet.new(data_folder+"sat6c.tra",36,:float)
@@ -30,9 +30,15 @@ algo_param = MachineLearning::Parameter.new(:algo)
 algo_param.fix_set(["SVM_Class"])#"RadialBasisLearning"])
 study_params << algo_param
 
+trade_off = MachineLearning::Parameter.new(:trade_off)
+
+trade_off.numeric_range(0.0001,0.001,0.0001)
+
+study_params << trade_off
+
 gamma_rbf_factor = MachineLearning::Parameter.new(:gamma_rbf_factor)
 
-gamma_rbf_factor.numeric_range(3.0,10.0,1.0)
+gamma_rbf_factor.numeric_range(0.5,0.5,1.0)
 
 study_params << gamma_rbf_factor
 
