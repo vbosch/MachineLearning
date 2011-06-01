@@ -9,6 +9,7 @@ module MachineLearning
   class SvmCombinations
     def initialize(extoolspath="",type=:one_against_all)
       @num_classes=nil
+      puts "PENE"
     end
     def set_directory(exdirectory)
       @directory=exdirectory
@@ -105,6 +106,7 @@ module MachineLearning
           printf(".")
           real_label= get_label(pattern_line)
           est_label = classify_pattern(pattern_line)
+          #puts "real #{real_label} estimated #{est_label}"
           if est_label == real_label
             res[:right] += 1.0
           else
@@ -119,7 +121,6 @@ module MachineLearning
       res[:right] /= count
       res[:wrong] /= count
       res[:error] = res[:wrong]
-      
       return res
     end
     

@@ -100,7 +100,7 @@ module MachineLearning
     end
     
     def svm_learn(parameter_line)
-      #puts "#{@toolspath}#{learn_comand} -v 0 -m 1024 -c 0.01 #{parameter_line}"      
+      #puts "#{@toolspath}#{learn_comand} -v 0 -m 1024 #{parameter_line}"      
       system "#{@toolspath}#{learn_comand} -v 0 -m 1024 #{parameter_line}"      
     end
     
@@ -120,7 +120,7 @@ module MachineLearning
       res[:right] = 100.0 - res[:wrong]
       res[:error] = res[:wrong]
       return res
-    end #svn
+    end
     
     private :generate_call_params, :svm_learn   
   end
