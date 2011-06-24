@@ -258,30 +258,220 @@ for the terrain classification task:
 
 \par We will not use sat6c.public.tst other than for final evaluation to ensure that we not indirectly over fit the set by using it when exploring the solution space. 
 
-\subsection{Multi-class SVM}
+\par Due to time constraints on the experimentation we will perform the parameter search with the DAGs SVM and then compare that best result with the same error we get with the SVM Multiclass.
 
-\subsection{Directed Acyclic Graphs SVM}
+\subsection{Polynomial Kernel}
+
+\par We initially performed a base DAGs SVM for the polynomial kernel of grades 1, 2 and 3 with the default values for all other variables:
+
+\begin{figure}[H]
+	\centerline{%
+	\includegraphics[]{base_poly.eps}
+	}
+	\caption[Statlog Task: Base experiment classification accuracy for polynomial kernel]{Plot shows the classification accuracy (\%)  as a function of the grade of the polynomial kernel used to train the SVM for the Statlog task. Each plotted point is an average computed with 5-block cross validation over the public training set sat6c.tra.}
+\end{figure}
+
+\par Next we perform a full range search varying the tradeoff parameter from 0.00001 up to 10.0 and the "s" parameter with the following set: 1,2,4,8,16 for a total of 90 experiments (if we consider the 5 block cross validation that means a total of 450 trainings).
+
+\begin{tabular}{c c c c c c} 
+\hline\hline 
+Polynomial Degree & trade off  & s parameter & c parameter & training accuracy & test accuracy \\
+1 & 0.00001 & 1 & 1 & 0.844 & 0.839 \\
+1 & 0.00001 & 16 & 1 & 0.887 & 0.871 \\
+1 & 0.00001 & 2  & 1  &0.855  &0.849 \\
+1 & 0.00001 & 4  & 1  &0.866  &0.858 \\
+1 & 0.00001 & 8  & 1  &0.879  &0.862 \\
+1 & 0.0001 & 1 1 & 0 &.882 0 &.866 \\
+1 & 0.0001 & 16 & 1 & 0.907 & 0.872 \\
+1 & 0.0001 & 2 & 1 & 0.89 & 0.869 \\
+1 & 0.0001 & 4 & 1 & 0.894 & 0.88 \\
+1 & 0.0001 & 8 & 1 & 0.903 & 0.875 \\
+1 & 0.001 & 1  & 1 & 0.905 & 0.872 \\
+1 & 0.001 & 16 & 1 & 0.919 & 0.863 \\
+1 & 0.001 & 2  & 1 & 0.907 & 0.874 \\
+1 & 0.001 & 4 & 1 & 0.911 & 0.871 \\
+1 & 0.001 & 8 & 1 & 0.917 & 0.861 \\
+1 & 0.1 & 1 & 1 & 0.925 & 0.854 \\
+1 & 0.1 & 16 & 1 & 0.926 & 0.846 \\
+1 & 0.1 & 2 & 1 & 0.924 & 0.853 \\
+1 & 0.1 & 4 & 1 & 0.924 & 0.855 \\
+1 & 0.1 & 8 & 1 & 0.924 & 0.854 \\
+1 & 1.0 & 1 & 1 & 0.924 & 0.85 \\
+1 & 1.0 & 16 & 1 & 0.804 & 0.743 \\
+1 & 1.0 & 2 & 1 & 0.926 & 0.856 \\
+1 & 1.0 & 4 & 1 & 0.92  &0.852 \\
+1 & 1.0 & 8 & 1 & 0.887 & 0.821 \\
+1 & 10.0 & 1 & 1 & 0.831 & 0.755 \\
+1 & 10.0 & 16 & 1 & 0.758 & 0.703 \\
+1 & 10.0 & 2 & 1 & 0.794 & 0.732 \\
+1 & 10.0 & 4 & 1 & 0.688 & 0.641 \\
+1 & 10.0 & 8 & 1 & 0.685 & 0.642 \\
+\hline 
+\end{tabular} 
+\label{tab:dist_result}
+
+\begin{tabular}{c c c c c c} 
+\hline\hline 
+Polynomial Degree & trade off  & s parameter & c parameter & training accuracy & test accuracy \\
+2 & 0.00001 & 1 & 1 & 0.985 & 0.857 \\
+2 & 0.00001 & 16 & 1 & 0.972 & 0.836 \\
+2 & 0.00001 & 2 & 1 & 0.977 & 0.849 \\
+2 & 0.00001 & 4 & 1 & 0.976 & 0.828 \\
+2 & 0.00001 & 8 & 1 & 0.978 & 0.826 \\
+2 & 0.0001 & 1 & 1 & 0.981 & 0.839 \\
+2 & 0.0001 & 16 & 1 & 0.982 & 0.85 \\
+2 & 0.0001 & 2 & 1 & 0.98  &0.841 \\
+2 & 0.0001 & 4 & 1 & 0.977 & 0.835 \\
+2 & 0.0001 & 8 & 1 & 0.968 & 0.847 \\
+2 & 0.001 & 1 & 1 & 0.977 & 0.841 \\
+2 & 0.001 & 16 & 1 & 0.98 & 0.85 \\
+2 & 0.001 & 2 & 1 & 0.985 & 0.85 \\
+2 & 0.001 & 4 & 1 & 0.978 & 0.848 \\
+2 & 0.001 & 8 & 1 & 0.977 & 0.829 \\
+2 & 0.1 & 1 & 1 & 0.976 & 0.845 \\
+2 & 0.1 & 16 & 1 & 0.98 & 0.856 \\
+2 & 0.1 & 2 & 1 & 0.973 & 0.834 \\
+2 & 0.1 & 4 & 1 & 0.979 & 0.841 \\
+2 & 0.1 & 8 & 1 & 0.982 & 0.854 \\
+2 & 1.0 & 1 & 1 & 0.979 & 0.849 \\
+2 & 1.0 & 16 & 1 & 0.981 & 0.843 \\
+2 & 1.0 & 2 & 1 & 0.973 & 0.846 \\
+2 & 1.0 & 4 & 1 & 0.981 & 0.846 \\
+2 & 1.0 & 8 & 1 & 0.976 & 0.84 \\
+2 & 10.0 & 1 & 1 & 0.977 & 0.841 \\
+2 & 10.0 & 16 & 1 & 0.984 & 0.837 \\
+2 & 10.0 & 2 & 1 & 0.978 & 0.84 \\
+2 & 10.0 & 4 & 1 & 0.975 & 0.834 \\
+2 & 10.0 & 8 & 1 & 0.974 & 0.849 \\
+\hline 
+\end{tabular} 
+\label{tab:dist_result}
+
+\begin{tabular}{c c c c c c} 
+\hline\hline 
+Polynomial Degree & trade off  & s parameter & c parameter & training accuracy & test accuracy \\
+3 & 0.00001 & 1 & 1 & 0.991 0.834 \\
+3 & 0.00001 & 16 & 1 & 0.926 0.801 \\
+3 & 0.00001 & 2 & 1 0.985 0.846 \\
+3 & 0.00001 & 4 & 1 0.983 0.832 \\
+3 & 0.00001 & 8 & 1 0.946 0.821 \\
+3 & 0.0001 & 1 & 1 & 0.996 & 0.831 \\
+3 & 0.0001 & 16 & 1 & 0.931 & 0.797 \\
+3 & 0.0001 & 2 & 1 & 0.973 & 0.835 \\
+3 & 0.0001 & 4 & 1 & 0.981 & 0.845 \\
+3 & 0.0001 & 8 & 1 & 0.931 & 0.805 \\
+3 & 0.001 & 1 & 1 & 0.992 & 0.844 \\
+3 & 0.001 & 16 & 1 & 0.953 & 0.813 \\
+3 & 0.001 & 2 & 1 & 0.986 & 0.845 \\
+3 & 0.001 & 4 & 1 & 0.973 & 0.831 \\
+3 & 0.001 & 8 & 1 & 0.924 & 0.788 \\
+3 & 0.1 & 1 & 1 & 0.996 & 0.85 \\
+3 & 0.1 & 16 & 1 & 0.91 & 0.779 \\
+3 & 0.1 & 2 & 1 & 0.987 & 0.834 \\
+3 & 0.1 & 4 & 1 & 0.981 & 0.853 \\
+3 & 0.1 & 8 & 1 & 0.92  & 0.788 \\
+3 & 1.0 & 1 & 1 & 0.997 & 0.85 \\
+3 & 1.0 & 16 & 1 & 0.979 & 0.848 \\
+3 & 1.0 & 2 & 1 & 0.994 & 0.85 \\
+3 & 1.0 & 4 & 1 & 0.922 & 0.796 \\
+3 & 1.0 & 8 & 1 & 0.95  &0.816 \\
+3 & 10.0 & 1 & 1 & 0.993 & 0.846 \\
+3 & 10.0 & 16 & 1 & 0.92 & 0.79 \\
+3 & 10.0 & 2 & 1 & 0.991 & 0.84 \\
+3 & 10.0 & 4 & 1 & 0.963 & 0.825 \\
+3 & 10.0 & 8 & 1 & 0.94  & 0.815 \\
+\hline 
+\end{tabular} 
+\label{tab:dist_result}
+
+\par The best result accuracy result 0.88 was obtained with a polynomial degree of 1, trade off set to 0.0001 and s parameter to 4.
+
+\subsection{Radial Basis Function Kernel}
+
+\par Usage of the RBF was more complicated as the tradeoff factor and the gamma factor required a certain configuration otherwise the accuracy results where very low.
+
+\par We performed an initial experimentation where we:
+\begin{itemize}
+	\item Varied the trade-off between: 1.0, 0.1 , 0.01, 0.001, 0.0001
+	\item Varied the gamma factor: 1.0 , 0.1 , 0.01, 0.001, 0.0001, 0.00001, 0.000001
+\end{itemize}
+\par 35 experiments with 5 block cross validation for a total of 175 experiments.
+
+\begin{figure}[H]
+	\centerline{%
+	\includegraphics[]{base_rbf.eps}
+	}
+	\caption[Statlog Task: Base experiment classification accuracy for RBF kernel]{Plot shows the classification accuracy (\%)  as a function of the gamma factor used to train the SVM for the Statlog task for different trade off values with logarithmic axis. Each plotted point is an average computed with 5-block cross validation over the public training set sat6c.tra.}
+\end{figure}
+
+\par As we saw that the best results occurred for large trade off values with small gamma factors, in fact for the lowest trade offs of 0.001 and 0.0001 classification rate was very bad. We performed a more precise experimentation to review large trade offs with low gamma factors where we:
+\begin{itemize}
+	\item Varied the trade-off between: 1.0 , 2.0 , 5.0 , 10.0
+	\item Varied the gamma factor:  0.001, 0.0001, 0.00001
+\end{itemize}
+
+\begin{figure}[H]
+	\centerline{%
+	\includegraphics[]{adv_1_rbf.eps}
+	}
+	\caption[Statlog Task: Trade off experiment classification accuracy for RBF kernel]{Plot shows the classification accuracy (\%)  as a function of the gamma factor used to train the SVM for the Statlog task for different trade off values. Each plotted point is an average computed with 5-block cross validation over the public training set sat6c.tra.}
+\end{figure}
+
+
+\par Finally as we saw the best results where obtained for 0.0001 gamma factor value we performed another batch to see if there was any gain when varying the trade off between 3.0 and 7.0.
+
+\begin{figure}[H]
+	\centerline{%
+	\includegraphics[]{adv_2_rbf.eps}
+	}
+	\caption[Statlog Task: Gamma factor 0.0001 trade off experiment for RBF kernel]{Plot shows the classification accuracy (\%)  as a function of the trade off parameter used to train the SVM for the Statlog task. Each plotted point is an average computed with 5-block cross validation over the public training set sat6c.tra.}
+\end{figure}
+
+\par As we have seen the best RBF kernel accuracy for the DAGS SVM has been obtained with gamma factor RBF 0.0001 and trade off 6.0.
+
+
+\subsection{Sigmoid Kernel}
+
+\par For the sigmoid kernel we performed an experiment varying the following:
+\begin{itemize}
+	\item Trade off was reviewed for: 10.0, 1.0, 0.1, 0.001, 0.0001 and 0.00001
+	 \item S sigmoid factor for: 10.0, 2.0 and 1.0
+\end{itemize}
+
+\par The results where quite bad all models trained obtained just 0.234 accuracy over the train set and 0.233 over the cross validation. 
+
+\par None of the resulting 24 experiments (120 trainings in total) gave good performance. As there was no more time to review
+other parameter ranges this kernel type is initially discarded due to its bad performance. 
 
 
 \section{Conclusions}
 
-\par As we have seen in the previous tasks the best results have been obtained for the Radial based learning. The best results for each algorithm in the private test set has been as follows: 
+\par We now perform a separate test using the best parameters for each of the kernel types and test it agains the  
+sat6c.public.tst separate data set not used will performing the experimentation: 
 
 \begin{table}[H] 
-\caption{Private test set - best error results for training algorithms} %title of the table
+\caption{Public test set - best error results for kernels} %title of the table
 \centering 
-\begin{tabular}{c c c} 
+\begin{tabular}{c c c c} 
 \hline\hline 
-Back-propagation & Quick-propagation & Radial Network \\
-10.40 & 15.50 &  9.60 \\
+Model & Polynomial Kernel & RBF Kernel & Sigmoid Kernel \\
+DAG SVM & 0.8621 & 0.8971 & 0.233\\
+Multiclass SVM & 0.77 & 0.515 & 0.106\\ 
 
 \hline 
 \end{tabular} 
 \label{tab:dist_result} 
 \end{table}
 
-\par We have obtained the best results for Back-propagation and Radial based learning, being our radial network the network with least classification task in the board.
+\par As we can see from the results above:
+\begin{itemize}
+	\item The error obtained during the classification seems to represent adequately de real error we will get on unseen data.
+	\item On the whole 2 class SVM combined by means of the DAG technique worked better than Multiclass SVM for this task.
+	\item Training time for DAG SVM was much lower than for Multiclass SVM.
+	\item Classification time for DAG SVM was higher than for Multiclass SVM due to havint to perform so many classifications to get a final result.
+	\item The best result for the task was 0.897 which is a couple of points over the NN classifier result of 0.885 reported for the task. 
+\end{itemize}
 
-\par In future work it would be interesting to use the SVM software that has been integrated in the framework to study this task.  
+
 
 \end{document}

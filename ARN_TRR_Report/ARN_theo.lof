@@ -1,4 +1,8 @@
 \contentsline {xsect}{Introduction}{1}
-\contentsline {xsect}{Development}{2}
-\contentsline {xsect}{Experimental Results}{5}
-\contentsline {xsect}{Conclusions}{5}
+\contentsline {xsect}{Development}{3}
+\contentsline {xsect}{Experimental Results}{6}
+\contentsline {figure}{\numberline {1}{\ignorespaces Statlog Task: Base experiment classification accuracy for polynomial kernel}}{6}
+\contentsline {figure}{\numberline {2}{\ignorespaces Statlog Task: Base experiment classification accuracy for RBF kernel}}{10}
+\contentsline {figure}{\numberline {3}{\ignorespaces Statlog Task: Trade off experiment classification accuracy for RBF kernel}}{11}
+\contentsline {figure}{\numberline {4}{\ignorespaces Statlog Task: Gamma factor 0.0001 trade off experiment for RBF kernel}}{11}
+\contentsline {xsect}{Conclusions}{12}

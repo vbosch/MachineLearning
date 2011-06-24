@@ -7,7 +7,7 @@ require_relative '../lib/study'
 require_relative '../lib/blank_formatters'
 
 data_folder="../test/theory_data/"
-results_folder="./svm_combinations_rbf_5"
+results_folder="./svm_combinations_sigmoid_3"
 
 
 set = MachineLearning::DataSet.new(data_folder+"sat6c.tra",36,:float)
@@ -23,32 +23,30 @@ study_params = Array.new
 
 
 kernel_type=MachineLearning::Parameter.new(:kernel_type)
-kernel_type.fix_set([2])
+kernel_type.fix_set([3])
 study_params << kernel_type
 
 algo_param = MachineLearning::Parameter.new(:algo)
-algo_param.fix_set(["DAGSVM"])#"RadialBasisLearning"])
+algo_param.fix_set(["DAGSVM"])
 study_params << algo_param
 
 trade_off = MachineLearning::Parameter.new(:trade_off)
 
-trade_off.fix_set([1.0,2.0,5.0,10.0])
+trade_off.fix_set([10.0])
 
 study_params << trade_off
 
-gamma_rbf_factor = MachineLearning::Parameter.new(:gamma_rbf_factor)
+s_sigmoid_factor = MachineLearning::Parameter.new(:s_sigmoid_factor)
 
-gamma_rbf_factor.fix_set([0.001,0.0001,0.00001])
+s_sigmoid_factor.fix_set([0.00001])
 
-study_params << gamma_rbf_factor
+study_params << s_sigmoid_factor
 
-#d_polynomial_factor = MachineLearning::Parameter.new(:d_polynomial_factor)
+c_sigmoid_factor = MachineLearning::Parameter.new(:c_sigmoid_factor)
 
-#d_polynomial_factor.numeric_range(1,1,1)
+c_sigmoid_factor.fix_set([1])
 
-#study_params << d_polynomial_factor
-
-#ap study_params
+study_params << c_sigmoid_factor
 
 study = MachineLearning::Study.new(results_folder,:SvmCombinations,study_params,set,5,"results.txt","study_list.txt",6)
 

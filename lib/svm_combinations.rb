@@ -15,6 +15,19 @@ module MachineLearning
       @directory=exdirectory
     end
     
+    def base_training(data,ex_num_classes)
+      @num_classes=ex_num_classes
+      create_sub_svms
+      train = Hash.new
+      1.step(@num_classes,1) do |curr_class|
+        @num_classes.downto(curr_class+1) do |vs_class|
+          train["#{curr_class}-#{vs_class}"]=data.filter_and_binarize_classes([curr_class,vs_class])
+          #puts "#{curr_class}-#{vs_class} #{train["#{curr_class}-#{vs_class}"].classes}"
+        end
+      end
+      return train
+    end
+    
     def cross_training(partitioned_data,ex_num_classes)
       
       @num_classes=ex_num_classes

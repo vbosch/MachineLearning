@@ -1,0 +1,157 @@
+cd Documents/UPV/
+ls
+mkdir RHA
+ls
+ls
+cd RHA
+ls
+rm *.rar
+ls
+cd pizzeria
+ls
+mate .
+ls
+cd ..
+ls
+cd centralita/
+ls
+mate .
+ls
+cd ..
+ls
+cp centralita/ project
+ls
+mkdir project
+ls
+cd centralita/
+ls
+cp * ../centralita/
+cd ..
+ls
+cd project/
+ls
+cd ..
+ls
+cd centralita/
+ls
+cp * ../project/
+cd ..
+cd project/
+ls
+mv centralitavoxeo.vxml reserva_espacio.vxml
+ls
+mate reserva_espacio.vxml 
+mate .
+ls
+ls
+mate .
+ls
+cd ..
+ls
+cd pizzeria/
+ls
+mate .
+ls
+cd ..
+ls
+cd project
+ls
+rm confirma.jsgf 
+rm dni.jsgf 
+rm fecha_nacimiento.jsgf 
+rm lola.wav 
+ls
+rm names.jsgf 
+rm temp.txt 
+ls
+ls
+cd ..
+ls
+cd centralita/
+ls
+cp confirma.jsgf ../project/
+ls
+mate centralitavoxeo.vxml 
+ls
+cd ..
+ls
+cd project/
+ls
+rm project.aux
+rm project.fdb_latexmk 
+rm project.log 
+rm project.m*
+ls
+rm project.synctex.gz 
+ls
+rm dni.jsgf 
+ls
+ls
+cd ..
+cd
+cd UPV
+ls
+cd Documents/
+ls
+cd UPV/
+ls
+cd METL/
+ls
+cd BIN
+ls
+./scfg_learn
+./scfg_learn -g ../MODELS/gr05.000 -f ./testgr.001 -m ../DATA/02-21-m40.p-el -i 1 
+./scfg_learn -g ../MODELS/gr05.000 -f ./testgr.001 -m ../DATA/02-21-m40.p-el -i 1 
+./scfg_learn -g ../MODELS/gr05.000 -f ./testgr.001 -m ../DATA/02-21-m40.p-el -i 1 
+make clean
+cd ..
+ll
+ls
+cd SRC/
+make clean
+make
+cd ..
+ll
+ll
+ls
+cp SRC/scfg_learn BIN/
+cd BIN/
+./scfg_learn -g ../MODELS/gr05.000 -f ./testgr.001 -m ../DATA/02-21-m40.p-el -i 1 
+cd ../SRC/
+./scfg_learn -g ../MODELS/gr05.000 -f ./testgr.001 -m ../DATA/02-21-m40.p-el -i 1 
+vi cfg.c 
+cp cfg.c cfg.c.old
+ls
+cd ..
+ls
+gcc -v
+ls
+scp jandreu@milotxa.dsic.upv.es:/tmp/DATA.tgz /tmp
+cp /tmp/DATA.tgz .
+ls
+cd DATA
+ls
+rm -Rf *
+cd ..
+rmdir DATA
+tar -zvxf DATA.tgz 
+ls
+cd DATA
+ls
+cd ..
+cd SRC
+ls
+./scfg_learn -g ../MODELS/gr05.000 -f ./testgr.001 -m ../DATA/02-21-m40.p-el -i 1 
+ls
+cd 
+cd Documents/UPV/
+ls
+cd MachineLearning/
+ls
+history git
+history 
+:q
+history | grep git
+history -h
+history -awrn git
+history -a git

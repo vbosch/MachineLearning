@@ -57,8 +57,10 @@ module MachineLearning
       line = "-c #{@parameter[:trade_off]} -t #{@parameter[:kernel_type]}"
       
       case @parameter[:kernel_type]
+      when 0 then #linear kernel
+        line+= ""
       when 1 then #polynomial kernel
-        line += " -d #{@parameter[:d_polynomial_factor]}"
+        line += " -d #{@parameter[:d_polynomial_factor]} -s #{@parameter[:s_sigmoid_factor]} -r #{@parameter[:c_sigmoid_factor]}"
       when 2 then #RBF kernel
         line += " -g #{@parameter[:gamma_rbf_factor]}"
       when 3 then #Sigmoid kernel
@@ -82,7 +84,7 @@ module MachineLearning
       aux_pattern_file = "./aux_pat.txt"
       aux_res_file = "./aux_res.txt"
       pattern_to_file(pattern_line,aux_pattern_file)
-      #puts "#{@toolspath}#{classify_comand} -v 0 #{aux_pattern_file} #{@parameter[:out_model]} #{aux_res_file}"
+      puts "#{@toolspath}#{classify_comand} -v 0 #{aux_pattern_file} #{@parameter[:out_model]} #{aux_res_file}"
       system "#{@toolspath}#{classify_comand} -v 0 #{aux_pattern_file} #{@parameter[:out_model]} #{aux_res_file}"
       val = extract_classification_from_file(aux_res_file)
       File.delete(aux_pattern_file,aux_res_file)
